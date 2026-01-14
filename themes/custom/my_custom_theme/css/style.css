@@ -607,3 +607,169 @@ footer[role="contentinfo"] {
     grid-column: 1;
   }
 }
+
+/* --- View Filters (Top Bar) --- */
+.view-filters form {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+}
+
+.view-filters .form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end; /* Align inputs and button at bottom */
+  gap: 1.5rem;
+}
+
+.view-filters .form-item {
+  margin: 0;
+  flex: 1 1 200px; /* Responsive items */
+}
+
+.view-filters label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.view-filters select,
+.view-filters input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+/* Filter Button */
+.view-filters .form-submit {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 44px; /* Align height with inputs */
+}
+
+.view-filters .form-submit:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- Job Grid (View Content) --- */
+.view-job-board .view-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Make standard Views table/grid into modern cards */
+/* Override default views grid styles if necessary */
+.views-view-grid .views-row {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem; /* Fallback gap */
+}
+
+.views-view-grid .views-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+/* --- Job Card Content --- */
+
+/* Title */
+.views-field-title a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.views-field-title a:hover {
+  color: #2563eb;
+}
+
+/* Metadata Row (Company, Location, Type) */
+.views-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex wrapper for metadata if you want them in a row */
+/* NOTE: Views outputs divs. We can use Grid on the card itself to layout fields */
+.views-row {
+  display: grid;
+  grid-template-areas: 
+    "title title"
+    "company location"
+    "type date";
+  gap: 0.5rem 1rem;
+}
+
+.views-field-title { grid-area: title; }
+.views-field-field-company { grid-area: company; }
+.views-field-field-location { grid-area: location; }
+.views-field-field-job-type { grid-area: type; }
+.views-field-created { grid-area: date; text-align: right; }
+
+/* Field Styling */
+.views-field-field-company .field-content {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.views-field-field-location .field-content::before {
+  content: "📍 ";
+}
+
+.views-field-field-job-type .field-content {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.views-field-created span {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 600px) {
+  .view-filters .form--inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .views-row {
+    grid-template-areas: 
+      "title"
+      "company"
+      "location"
+      "type"
+      "date";
+  }
+  
+  .views-field-created { text-align: left; margin-top: 10px; }
+}
