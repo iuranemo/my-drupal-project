@@ -1,7 +1,7 @@
 name: my_custom_theme
 type: theme
 'base theme': stable9
-version: 1.0.0
+version: 1.0.1
 libraries:
   - my_custom_theme/base
   - my_custom_theme/messages
@@ -21,6 +21,6 @@ libraries-extend:
     - my_custom_theme/progress
   core/drupal.tablesort:
     - my_custom_theme/drupal.tablesort
-description: ''
+description: 'Test theme'
 core_version_requirement: ^11
 generator: 'starterkit_theme:11.3.2'
