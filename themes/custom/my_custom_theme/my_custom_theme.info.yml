@@ -6,6 +6,7 @@ libraries:
   - my_custom_theme/base
   - my_custom_theme/messages
   - core/normalize
+  - my_custom_theme/global-styling
 libraries-extend:
   user/drupal.user:
     - my_custom_theme/user
