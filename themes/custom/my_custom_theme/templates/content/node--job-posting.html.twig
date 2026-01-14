@@ -1,0 +1,38 @@
+{#
+  Template for Job Posting nodes
+#}
+<article{{ attributes.addClass('job-posting') }}>
+
+  {# 1. Job Header #}
+  <header class="job-header">
+    <h1 class="job-title">{{ label }}</h1>
+    <div class="job-meta">
+      <span class="company">{{ content.field_company }}</span>
+      <span class="location">{{ content.field_location }}</span>
+      <span class="type">{{ content.field_job_type }}</span>
+    </div>
+  </header>
+
+  {# 2. Main Layout #}
+  <div class="job-layout">
+    
+    {# Left Column: Description #}
+    <div class="job-content">
+      <h2>Job Description</h2>
+      {{ content.body }}
+      
+      {# Print any other fields you want here #}
+      {{ content.field_salary }}
+    </div>
+
+    {# Right Column: Apply Form #}
+    <aside class="job-sidebar">
+      <div class="apply-box">
+        <h3>Ready to Apply?</h3>
+        {{ content.field_apply_now }} {# This is your Webform field #}
+      </div>
+    </aside>
+
+  </div>
+
+</article>
