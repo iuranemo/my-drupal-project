@@ -194,3 +194,416 @@ article.job-posting {
   text-align: center;
   border-radius: var(--radius);
 }
+
+/* --- Header Container --- */
+header[role="banner"] {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  padding: 0 2rem;
+  position: sticky; /* Keeps header at top */
+  top: 0;
+  z-index: 100;
+}
+
+/* Flexbox layout for Header Region */
+.region-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70px; /* Fixed height for consistency */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Logo Styling --- */
+.site-logo img {
+  height: 40px; /* Constrain logo size */
+  width: auto;
+  display: block;
+}
+
+/* --- Main Navigation (Menu) --- */
+.menu--main {
+  margin-left: auto; /* Pushes menu to the right */
+}
+
+.menu--main ul.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem; /* Space between links */
+}
+
+.menu--main li.menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu--main a {
+  text-decoration: none;
+  color: #4b5563; /* Gray-600 */
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent; /* For hover effect */
+  transition: all 0.2s ease;
+}
+
+.menu--main a:hover,
+.menu--main a.is-active {
+  color: #2563eb; /* Primary Blue */
+  border-bottom-color: #2563eb;
+}
+
+/* --- Mobile Responsiveness (Simple) --- */
+@media (max-width: 768px) {
+  .region-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  
+  .menu--main ul.menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --- Sidebar Container --- */
+.layout-sidebar-first {
+  background-color: #f9fafb; /* Light gray background */
+  border-right: 1px solid #e5e7eb;
+  padding: 2rem 1.5rem;
+  min-height: 100vh; /* Full height sidebar */
+  width: 100%;
+  max-width: 320px; /* Constrain width */
+  box-sizing: border-box;
+}
+
+/* --- Common Block Styling --- */
+.region-sidebar-first .block {
+  margin-bottom: 2.5rem; /* Space between blocks */
+}
+
+.region-sidebar-first h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280; /* Muted gray label */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+/* --- Page Title Block --- */
+.block-page-title-block h1.page-title {
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb a {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #2563eb; /* Primary Blue */
+  text-decoration: underline;
+}
+
+/* --- Language Switcher --- */
+.block-language ul.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.block-language a.language-link {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.block-language a.language-link.is-active,
+.block-language a.language-link:hover {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+/* --- Recipe Collections (Tags Cloud) --- */
+.views-view-responsive-grid__item-inner {
+  margin-bottom: 8px;
+}
+
+.views-field-name span.field-content a {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: 100%; /* Make tags fill grid cells */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.views-field-name span.field-content a:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* Fix the responsive grid gap from inline styles */
+.views-view-responsive-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 8px !important;
+  --views-responsive-grid--layout-gap: 8px !important;
+}
+
+/* --- Search Block --- */
+.search-block-form form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-block-form .form-item {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.search-block-form input.form-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.search-block-form input.form-submit {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.search-block-form input.form-submit:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- User Account Menu --- */
+.menu--account ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu--account li.menu-item a {
+  display: block;
+  padding: 8px 0;
+  color: #4b5563;
+  text-decoration: none;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.menu--account li.menu-item a:hover {
+  color: #2563eb;
+  padding-left: 5px; /* Slight movement effect */
+}
+
+/* --- Disclaimer & Copyright --- */
+.block-block-content {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  line-height: 1.5;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.block-block-content p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* --- Footer Container --- */
+footer[role="contentinfo"] {
+  background-color: #1f2937; /* Dark Slate Gray */
+  color: #f3f4f6;
+  padding: 4rem 2rem;
+  margin-top: auto; /* Push to bottom if flex container */
+  border-top: 5px solid #2563eb; /* Top accent border */
+}
+
+/* Footer Region Wrapper */
+.region-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+/* --- Promo Block Styling --- */
+#block-my-custom-theme-footer-promo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #111827; /* Darker background for card effect */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Image Styling --- */
+.field--name-field-media-image img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+#block-my-custom-theme-footer-promo:hover .field--name-field-media-image img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* --- Text Content Wrapper (You might need to adjust HTML to group these if possible, 
+   but Flexbox handles the flow nicely if flattened) --- */
+
+/* Title */
+.field--name-field-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+/* Summary Text */
+.field--name-field-summary {
+  font-size: 1rem;
+  color: #9ca3af; /* Light gray text */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Call to Action Link */
+.field--name-field-content-link a {
+  display: inline-block;
+  background-color: #2563eb; /* Primary Blue */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.field--name-field-content-link a:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  #block-my-custom-theme-footer-promo {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .field--name-field-media-image img {
+    max-width: 180px; /* Smaller image on mobile */
+    margin-bottom: 1rem;
+  }
+
+  .field--name-field-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Better Layout using Grid */
+#block-my-custom-theme-footer-promo {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Image auto, Text takes rest */
+  grid-template-rows: auto auto auto; /* Title, Summary, Link rows */
+  gap: 0 2rem; /* Column gap only */
+  align-items: center;
+}
+
+/* Place Image in the first column, spanning all 3 rows */
+.field--name-field-media-image {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+
+/* Text fields go in column 2 */
+.field--name-field-title,
+.field--name-field-summary,
+.field--name-field-content-link {
+  grid-column: 2;
+}
+
+/* Mobile override for Grid */
+@media (max-width: 768px) {
+  #block-my-custom-theme-footer-promo {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: auto;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .field--name-field-media-image {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+  }
+  
+  .field--name-field-title,
+  .field--name-field-summary,
+  .field--name-field-content-link {
+    grid-column: 1;
+  }
+}
